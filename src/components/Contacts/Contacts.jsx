@@ -7,6 +7,7 @@ import {
   fetchContacts,
   removeContact,
   getFilteredContacts,
+  getLoading,
 } from "../../redux/contacts/";
 
 export function Contacts() {
@@ -17,11 +18,13 @@ export function Contacts() {
   }, [dispatch]);
 
   const contacts = useSelector(getFilteredContacts);
+  const isLoading = useSelector(getLoading);
   const onDeleteContacts = (id) => dispatch(removeContact(id));
 
   return (
     <ContactList>
       <Title>Contacts</Title>
+      {isLoading && <div>Загружаю...</div>}
       {contacts.map(({ name, id, number }) => (
         <Item key={id} id={id}>
           {name}: {number}

@@ -10,10 +10,6 @@ export const deleteContactError = createAction("deleteContactError");
 
 export const changeFilter = createAction("contacts/changeFilter");
 
-export const fetchContactsRequest = createAction(
-  "contacts/fetchContactsRequest"
-);
-export const fetchContactsSuccess = createAction(
-  "contacts/fetchContactsSuccess"
-);
-export const fetchContactsError = createAction("contacts/fetchContactsError");
+export const fetchContactsRequest = createAction("fetchContactsRequest");
+export const fetchContactsSuccess = createAction("fetchContactsSuccess");
+export const fetchContactsError = createAction("fetchContactsError");
